@@ -16,7 +16,12 @@ jobs:
       # Setup Flutter SDK with a specific version
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.10.0' # Replace with the desired Flutter version
+          flutter-version: '3.10.5' # Replace with the desired Flutter version
+
+      # Setup Dart SDK with the required version
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: '>=3.3.0 <4.0.0'
 
       - name: Install dependencies
         run: flutter pub get
