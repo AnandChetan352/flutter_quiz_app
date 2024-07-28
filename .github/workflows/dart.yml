@@ -18,10 +18,10 @@ jobs:
         with:
           flutter-version: '3.10.5' # Replace with the desired Flutter version
 
-      # Setup Dart SDK with the required version
+      # Setup Dart SDK with a specific version
       - uses: dart-lang/setup-dart@v1
         with:
-          sdk: '>=3.3.0 <4.0.0'
+          sdk: '3.3.0' # Replace with the desired Dart SDK version
 
       - name: Install dependencies
         run: flutter pub get
