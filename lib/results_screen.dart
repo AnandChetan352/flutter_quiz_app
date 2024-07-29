@@ -5,8 +5,9 @@ import 'package:quiz_app/text_widget';
 
 class ResultScreen extends StatelessWidget
 {
-  const ResultScreen(this.choosenAnswer,{super.key});
+  const ResultScreen(this.choosenAnswer, this.restartQuiz,{super.key});
   final List<String> choosenAnswer;
+  final void Function() restartQuiz; 
   
   List<Map<String,Object>> getSummarydata()
   {
@@ -44,11 +45,11 @@ class ResultScreen extends StatelessWidget
           mainAxisAlignment: MainAxisAlignment.center,
           children: 
         [
-          Text("You answered $correctQuestions out of $totalQuestions questions"),
+          TextWidget("You answered $correctQuestions out of $totalQuestions questions"),
           const SizedBox(height: 30),
           QuestionsSummary(summaryData),
           const SizedBox(height: 30),
-          TextButton(onPressed: (){}, child: const TextWidget("Restart Quiz"))
+          TextButton(onPressed: restartQuiz, child: const TextWidget("Restart Quiz"))
         ],),
       ),
     );
