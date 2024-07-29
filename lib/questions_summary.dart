@@ -34,24 +34,24 @@ class QuetionNumberWidget extends StatelessWidget {
     final color = isAnswerCorrect ? Colors.green.shade500 : Colors.red.shade500;
 
     return Row(
-      
-      children: [
+      crossAxisAlignment: CrossAxisAlignment.start, children: [
       Container(
-          height: 40,
-          width: 40,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle,
+        height: 30,
+        width: 35,
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: color,
+          shape: BoxShape.circle,
+        ),
+        child: Text(
+          questionIndex.toString(),
+          style: GoogleFonts.lato(
+            color: Colors.white,
+            fontSize: 15,
           ),
-          child: Text(
-            questionIndex.toString(),
-            style: GoogleFonts.lato(
-              color: Colors.white,
-              fontSize: 15,
-            ),
-          )),
+        ),
+      ),
       Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,11 +76,11 @@ class QuetionNumberWidget extends StatelessWidget {
             ),
             const SizedBox(height: 2),
             Text("Actual : $userAnswer",
-            style: GoogleFonts.workSans(
-                color: color,
-                fontSize: 15,
-              ),
-              textAlign: TextAlign.left),
+                style: GoogleFonts.workSans(
+                  color: color,
+                  fontSize: 15,
+                ),
+                textAlign: TextAlign.left),
             const SizedBox(height: 2),
           ],
         ),
