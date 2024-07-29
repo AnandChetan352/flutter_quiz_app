@@ -34,7 +34,7 @@ void switchScreen()
 void restartQuiz()
 {
   setState(() {
-    activeScreen = QuestionsScreen(chooseAnswer);
+    activeScreen = const Quiz();
   });
 }
 
@@ -54,22 +54,19 @@ void chooseAnswer(String answer)
 
   @override
   Widget build(context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
+    return Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [
-                Colors.deepPurple.shade700,
-                Colors.deepPurpleAccent.shade400
-              ],
+                Colors.deepPurple.shade400,
+                Colors.deepPurple.shade500,
+                Colors.black38
+                ],
             ),
           ),
           child: activeScreen,
-        ),
-      ),
-    );
+        );
   }
 }

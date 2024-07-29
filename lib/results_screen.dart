@@ -43,13 +43,14 @@ class ResultScreen extends StatelessWidget
         margin: const EdgeInsets.all(40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: 
         [
           TextWidget("You answered $correctQuestions out of $totalQuestions questions"),
           const SizedBox(height: 30),
           QuestionsSummary(summaryData),
           const SizedBox(height: 30),
-          TextButton(onPressed: restartQuiz, child: const TextWidget("Restart Quiz"))
+          ElevatedButton(onPressed: restartQuiz, child: const Text("Restart Quiz"))
         ],),
       ),
     );
