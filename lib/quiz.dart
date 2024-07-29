@@ -31,6 +31,13 @@ void switchScreen()
   });
 }
 
+void restartQuiz()
+{
+  setState(() {
+    activeScreen = QuestionsScreen(chooseAnswer);
+  });
+}
+
 void chooseAnswer(String answer)
 {
   selectedAnswers.add(answer);
@@ -39,7 +46,7 @@ void chooseAnswer(String answer)
     //switch to results screen here
     setState(() {
       
-      activeScreen = ResultScreen(selectedAnswers);
+      activeScreen = ResultScreen(selectedAnswers,restartQuiz);
       selectedAnswers = [];
     });
   }
